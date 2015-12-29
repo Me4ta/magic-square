@@ -25,7 +25,7 @@ var testWordsCount = function(words) {
 }
 
 var testCharsCount = function(chars) {
-    var expectedCount = 128 //32 years * 4 (code lenght); + 4 is from LOVE extra
+    var expectedCount = 18 * (18 / 2)
     if (chars.length == expectedCount) {
         log.ok('total chars: ' + chalk.yellow(chars.length));
     } else {
@@ -190,23 +190,50 @@ var printColoredSquareSplitReversed = function(square, options){
     })
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //todo: write tests verifying that it's able to find all words in a square
 var wordsToCheck = [
-    'Phoebe', 'Wallie', 'Chandler', 'Baby', 'Bike', 'Me4ta', 'Restuta', 'Racing',
-    'Will', 'You', 'Marry', 'Me?', 'California', '8', 'Sex', 'Music',
-    'Time', 'Together', 'Sunset', 'Ocean', 'Coffee', 'Hue', 'Wine', 'Morning',
-    'Касялька', 'USA', 'Talks', 'Travel','Vegas', 'Respect', 'Books', 'Unicorn'
+    'motocycle', 'celty', 'mafia', 'anime', 'japan', 'moscow', 'California', 'run',
+    'cooking', 'programming', 'java', 'games', 'honda', 'dog', 'go', 'marathon',
+    'macaroons', 'hiragana', 'hatsune', 'mgp', 'drawing', 'Natalya', 'Timothy', 'apple',
+    'happy', 'every', 'year'
 ]; // + love
 
 var words = [
-    'Chan', 'Phoebe', 'Wallie',
-    'Me', 'dler', 'Bike', 'Travel',
-    '4ta', 'Will', 'Coffee', 'res', 'tuta',
-    'You', 'Baby','Wine',  'To',
-    'Sex', 'Marry','Respect',
-    'gether', 'time?', 'Music',
-    'Касялька', 'Unicorn',  '8',
-    'books','racing','Vegas'
+  'motocycle', 'celty', 'java',
+  'anime', 'japan', 'moscow', 'go',
+  'California', 'run', 'games',
+  'programming', 'dog', 'mafia',
+  'honda', 'happy', 'cooking',
+  'hira', 'macaroons', 'every', 'gana', 'hatsune', 'year',
+  'mgp', 'drawing', 'Natalya', 'Timothy',
+  'apple', 'marathon',
+  '--'
 ]; // + love
 
 var coloredSquare = createColoredSquareFromWords(words);
@@ -257,13 +284,12 @@ console.log();
 // }
 //
 
-clearScreen();
- var square = coloredSquare;
- square = higlightSeveral(['coffee', ''], 'magenta', square);
- square = higlightSeveral(['', 'chandler'], 'cyan', square);
+var square = coloredSquare;
+square = higlightSeveral(['happy', 'every', 'year'], 'magenta', square);
+square = higlightSeveral(['', 'hiragana'], 'cyan', square);
 
- printColoredSquare(square, {lineLength: 16});
- console.log();
+printColoredSquare(square, {lineLength: 18});
+console.log();
 
 // printColoredSquareSplitReversed(square, {lineLength: 16});
 // console.log();
