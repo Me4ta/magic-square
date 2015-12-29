@@ -2,6 +2,7 @@ import chalk from 'chalk';
 import _ from 'lodash';
 import S from 'string';
 import log from './utils';
+import {stdout as logLine} from 'single-line-log';
 
 
 var generateLineOf = function(length) {
@@ -54,7 +55,7 @@ var testWordsAreInSquare = function(words, square) {
     }
 }
 
-var createColoredSquareFromWords = function(words){
+var createColoredSquareFromWords = function(words) {
     var wordsJoined = words.join('').toUpperCase();
 
     return _(wordsJoined).map(function(letter){
@@ -208,29 +209,6 @@ var words = [
     'books','racing','Vegas'
 ]; // + love
 
-
-/*
-moto / motocycle
-race
-mafia
-anime
-japan
-moscow
-California
-run
-cooking
-programming
-java
-games
-honda
-dog
-go
-marathon
-macaroons
-hiragana
-agaricus
-*/
-
 var coloredSquare = createColoredSquareFromWords(words);
 //var coloredSquare = createColoredSquareFromWords(_.shuffle(words));
 //var coloredSquare = createSquareAndSuffle(_.shuffle(words));
@@ -246,9 +224,8 @@ console.log();
 // var squareWithHiglights = coloredSquare;
 // _.each(words, function(word){
 //     //squareWithHiglights = higlightWord(word, 'white', squareWithHiglights);
-
 //     var x = higlightWord(word, 'white', squareWithHiglights);
-//     printColoredSquare(x, {lineLength: 12});
+//     printColoredSquare(x, {lineLength: 16});
 //     console.log();
 // });
 
@@ -258,42 +235,42 @@ console.log();
 //     var currentWord = wordsToCheck[(i == 31 ? (i) : (i++))];
 //     var higlightColor = 'cyan';
 //     var square = coloredSquare;
-
+//
 //     if (_.contains(['will', 'you', 'marry', 'me?'], currentWord.toLowerCase())) {
 //          return;
 //     }
-
-
-//         if (i == 31){
-//             console.log(i);
-//         clearScreen();
-//         square = higlightSeveral(['will', 'you', 'marry', 'me?'], 'magenta', square);
-//         //return;
+//
+//     clearScreen();
+//     if (i == 31) {
+//       console.log(i);
+//       square = higlightSeveral(['will', 'you', 'marry', 'me?'], 'magenta', square);
+//       //return;
 //     } else {
-//         clearScreen();
 //         console.log(currentWord);
 //         square = higlightSeveral([currentWord], higlightColor, square);
 //     }
-
+//
 //     console.log();
 //     console.log(chalk.red('      LOVE      '));
 //     printColoredSquare(square, {lineLength: 16});
 //     console.log();
 // }
+//
 
+clearScreen();
  var square = coloredSquare;
-square = higlightSeveral(['coffee', ''], 'magenta', square);
-square = higlightSeveral(['', 'chandler'], 'cyan', square);
+ square = higlightSeveral(['coffee', ''], 'magenta', square);
+ square = higlightSeveral(['', 'chandler'], 'cyan', square);
 
-printColoredSquare(square, {lineLength: 16});
-console.log();
+ printColoredSquare(square, {lineLength: 16});
+ console.log();
 
 // printColoredSquareSplitReversed(square, {lineLength: 16});
 // console.log();
 
 //console.log(chalk.grey('--- done ---') + '\n');
-//var timer = setInterval(doEvery, 5000);
+//var timer = setInterval(doEvery, 2000);
 
-// var clearScreen = function(){
-//     console.log('\033[2J');
-// }
+function clearScreen(){
+    console.log('\x1B[2J');
+}
