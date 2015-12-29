@@ -1,11 +1,10 @@
 import chalk from 'chalk';
 import _ from 'lodash';
 import S from 'string';
-
 import log from './utils';
 
 
-var generateLineOf = function(length){
+var generateLineOf = function(length) {
     var text = "";
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZКАСЯЛЬКА8";
 
@@ -209,6 +208,28 @@ var words = [
     'books','racing','Vegas'
 ]; // + love
 
+
+/*
+moto / motocycle
+race
+mafia
+anime
+japan
+moscow
+California
+run
+cooking
+programming
+java
+games
+honda
+dog
+go
+marathon
+macaroons
+hiragana
+agaricus
+*/
 
 var coloredSquare = createColoredSquareFromWords(words);
 //var coloredSquare = createColoredSquareFromWords(_.shuffle(words));
